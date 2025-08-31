@@ -40,7 +40,10 @@ def browser_kwargs(logger, test_type, run_info_data, config, **kwargs):
 
 
 def capabilities(server_config, **kwargs):
-    browser_required_args = ["--automation"]
+    browser_required_args = [
+        "--automation",
+        "--use-wpe-platform-api",
+    ]
     args = kwargs.get("binary_args", [])
     args = maybe_add_args(browser_required_args, args)
     return {
